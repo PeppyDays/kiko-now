@@ -4,12 +4,9 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+Oracle DB Administrator, DB Architecture, DB Developer (SQL, PL/SQL), Elastic Stack, MongoDB 등등 Data 로
+먹고 살고 있고, 앞으로도 그러고 싶어요.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[peppydays@gmail.com](mailto:peppydays@gmail.com)
