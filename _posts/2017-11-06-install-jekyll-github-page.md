@@ -48,8 +48,6 @@ tags: [blog, jekyll, github page]
 
 ![Github Repository Fork]({{ site.url }}/images/2017-11-06-install-jekyll-github-page/github-repository-fork.png){: .center-image}
 
-![Github Repository Fork Target]({{ site.url }}/images/2017-11-06-install-jekyll-github-page/github-repository-fork-target.png){: .center-image}
-
 그러면 수십초 안에 내 Repository 에 Fork 한 Repository 가 나타난다.
 
 Github Page 는 {사용자명}.github.io 일 때만 우리가 원하는 대로 동작하기 때문에, Fork 한 Repository 의 Settings 로 들어가서 Repository Name 을 아래처럼 변경해야 한다.
