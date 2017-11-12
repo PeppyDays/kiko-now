@@ -20,6 +20,11 @@ tags: [blog, jekyll, github page]
 
 ---
 
+* 목차
+{:toc}
+
+---
+
 ## Jekyll 로 만드는 Github Page
 
 [Jekyll](https://jekyllrb-ko.github.io) 은 다양한 포맷의 원본 텍스트 파일을 읽어서 각종 변환을 자동으로 해주고, 그 결과로 완성된 정적 웹사이트를 생성해준다.

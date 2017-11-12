@@ -10,7 +10,12 @@ tags: [linux, raid]
 
 RAID 는 Redundant Array of Independent Disks 혹은 Redundant Array of Inexpensive Disks 의 약자이다. 여러 개의 디스크에 하나의 디스크처럼 쓰는 방법이다. 외부에서 볼 때는 하나의 디스크처럼 쓰지만, 내부에서는 그 데이터를 나누어서 저장한다. 데이터를 나누어서 저장하는 방법은 레벨에 따라서 다른데, 그 방법에 따라서 읽고 쓰는 속도가 높아지기도 하고 안정성이 높아지기도 한다.
 
-그리고 RAID 로 디스크를 묶으면 1개의 디스크처럼 보이게 된다.
+---
+
+* 목차
+{:toc}
+
+---
 
 ## HW RAID, SW RAID
 
