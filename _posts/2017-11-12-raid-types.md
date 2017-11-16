@@ -41,7 +41,7 @@ HW 로 하느냐 SW 로 하느냐만 다를 뿐, 실제 데이터의 분산과 R
 
 RAID 0 는 아래 그림처럼 디스크들에 넣어야할 데이터들을 병렬로 나누어서 동시에 저장한다. 이런 저장방식을 Striping 이라고 한다.
 
-![RAID 0]({{ site.url }}/images/2017-11-12-raid-types/raid-0.png){: .center-image}
+![RAID 0]({{ site.url }}/images/raid-types/raid-0.png){: .center-image}
 
 여기서 동시에 저장한다는 말은 데이터를 순서대로 나누어서 2개 디스크로 저장한다는 뜻이다. 즉 1개 디스크에 저장하는 것 보다 병렬로 저장하므로 저장 속도가 약 2배가 된다. (물론 이런저런 이유로 실제 2배는 아니다.)
 
@@ -55,7 +55,7 @@ RAID 0 는 아래 그림처럼 디스크들에 넣어야할 데이터들을 병�
 
 RAID 1 은 아래 그림처럼 디스크들에 넣어야할 데이터를 2개로 복사해서 저장한다. 이런 저장방식을 Mirroring 이라고 한다.
 
-![RAID 1]({{ site.url }}/images/2017-11-12-raid-types/raid-1.png){: .center-image}
+![RAID 1]({{ site.url }}/images/raid-types/raid-1.png){: .center-image}
 
 디스크를 3개, 4개를 써서 RAID 로 그룹을 묶을 수 있다. (그런데 실무에서 2개까지는 RAID 1 으로 묶어도 3개 이상을 묶는 경우는 못봤다.) 그리고 많은 디스크를 묶을 수록 안정성이 높아진다. 디스크가 1개가 고장나도 다른 디스크에 모든 데이터가 있기 때문이다. 이렇기 때문에 데이터를 절대 잃어버려서는 안된다면 RAID 1 로 구성하는 것이 적절하다.
 
@@ -73,7 +73,7 @@ RAID 1 은 아래 그림처럼 디스크들에 넣어야할 데이터를 2개로
 
 > 오류정정부호는 데이터의 비트 중 오류가 있다면, 그 오류를 찾아내서 원래 비트로 복구를 시킬 수 있는 추가데이터를 말한다. 물론 100% 오류 비트를 찾아서 복구할 수 있는 것은 아니다.
 
-![RAID 4]({{ site.url }}/images/2017-11-12-raid-types/raid-4.png){: .center-image}
+![RAID 4]({{ site.url }}/images/raid-types/raid-4.png){: .center-image}
 
 들어오는 데이터의 일정 비트를 묶고, 오류정정부호를 계산해서 추가 데이터를 1개 디스크에 몰아서 저장한다. 이와 같은 경우 1개 디스크에 오류가 생겨도 오류정정부호를 통해 없어진 디스크의 내용을 유추해낼 수 있기 때문에 어느정도 디스크 오류에 따른 안정성도 가지고 있고, 또한 데이터를 병렬 저장하기 때문에 저장 속도도 높다.
 
@@ -89,7 +89,7 @@ RAID 5 는 RAID 2~4 와 거의 동일하다. 오류정정부호로 [Parity Bit](
 
 > Parity Bit 은 오류 또는 유실 비트를 복구하기 위해 별도로 저장하는 Bit 이다. 예를 들어 2 bit 의 데이터를 저장할 때마다 1 bit 의 Parity Bit 을 같이 저장한다. Parity Bit 을 만드는 방법은 전체 비트의 합을 홀수로 만들거나 또는 짝수로 만들거나, 2가지가 있다. 예로 Parity Bit 은 항상 합이 짝수가 되도록 한다고 하자. 그러면 11 데이터가 들어오면 Parity Bit 을 0 으로 설정해서 110 으로 저장하는 것이다.
 
-![RAID 5]({{ site.url }}/images/2017-11-12-raid-types/raid-5.png){: .center-image}
+![RAID 5]({{ site.url }}/images/raid-types/raid-5.png){: .center-image}
 
 RAID 5 의 장점은 1개 디스크 까지는 오류가 생겨도 복구가 가능하며, 저장 공간도 1개 디스크 빼고 나머지 디스크는 모두 활용할 수 있으므로 좋다. 저장속도 또한 1개 디스크 빼고 나머지로 병렬 저장되므로 괜찮게 나온다. 더 많은 디스크를 RAID 5 로 구성할 수록 효율성이 높아진다.
 
@@ -117,13 +117,13 @@ RAID 로 묶은 디스크 그룹은 결국 OS 가 보기에는 1개의 디스크
 
 RAID 1+0 은 디스크들을 먼저 RAID 1 로 묶고, 이런 디스크 그룹들을 RAID 0 으로 묶는 것을 말한다. 그러므로 최소 4개 이상의 디스크가 필요하다. 아래 그림을 보자.
 
-![RAID 1+0]({{ site.url }}/images/2017-11-12-raid-types/raid-1+0.png){: .center-image}
+![RAID 1+0]({{ site.url }}/images/raid-types/raid-1+0.png){: .center-image}
 
 데이터가 들어오면 Stripping 되고, 나누어진 데이터들이 Mirroring 되어서 디스크에 저장된다.
 
 반대로 RAID 0+1 은 디스크들을 먼저 RAID 0 으로 묶고, 이런 디스크 그룹들을 RAID 1 로 묶는 것을 말한다.
 
-![RAID 0+1]({{ site.url }}/images/2017-11-12-raid-types/raid-0+1.png){: .center-image}
+![RAID 0+1]({{ site.url }}/images/raid-types/raid-0+1.png){: .center-image}
 
 데이터가 들어오면 Mirroring 되고, 복사된 데이터들을 Stripping 해서 저장된다.
 

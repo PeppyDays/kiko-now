@@ -29,35 +29,35 @@ OS 를 구축하는데, 보통 OS 의 파일들이 서비스 구성 상 가장 �
 
 Virtual Box 에서 New 버튼을 눌러서 Redhat Linux 를 선택하자. (CentOS 는 Redhat 과 동일하기 때문에) 그리고 스토리지 옵션에 들어가서 아래와 같이 디스크 2개를 만들어서 넣고, CD-ROM 에는 위에서 다운받은 CentOS 의 iso 이미지를 넣자.
 
-![OS Install #1]({{ site.url }}/images/2017-11-12-raid-types-examples/os-install-01.png){: .center-image}
+![OS Install #1]({{ site.url }}/images/raid-types-examples/os-install-01.png){: .center-image}
 
 그리고 시작 버튼을 누르면 설치를 시작한다.
 
-![OS Install #2]({{ site.url }}/images/2017-11-12-raid-types-examples/os-install-02.png){: .center-image}
+![OS Install #2]({{ site.url }}/images/raid-types-examples/os-install-02.png){: .center-image}
 
 Install CentOS 7 을 클릭하고, Installation Destination 을 빼고 나머지 옵션들은 적당히 선택한다.
 
-![OS Install #3]({{ site.url }}/images/2017-11-12-raid-types-examples/os-install-03.png){: .center-image}
+![OS Install #3]({{ site.url }}/images/raid-types-examples/os-install-03.png){: .center-image}
 
 그리고 Installation Destination 을 선택하고, 우리가 꼽은 디스크 2개가 보이는데 모두 선택한다. 그리고 Partitioning 은 I will configure partitioning. 을 선택하자.
 
-![OS Install #4]({{ site.url }}/images/2017-11-12-raid-types-examples/os-install-04.png){: .center-image}
+![OS Install #4]({{ site.url }}/images/raid-types-examples/os-install-04.png){: .center-image}
 
 다음 화면에서는 아래와 같이 Click here to create them automatically 를 선택한다. 마운트 포인트를 여기에 있는 템플릿대로 하겠다는 뜻이다.
 
-![OS Install #5]({{ site.url }}/images/2017-11-12-raid-types-examples/os-install-05.png){: .center-image}
+![OS Install #5]({{ site.url }}/images/raid-types-examples/os-install-05.png){: .center-image}
 
 그러면 마운트포인트 /boot, /, swap 영역에 대해 파티션 옵션을 지정할 수 있다. /boot 와 / 는 중요한 데이터들이 들어가므로 RAID 1 로 구성하고, swap 영역은 중요한 데이터가 아니기 때문에 RAID 0 으로 아래처럼 구성해보자.
 
-![OS Install #6]({{ site.url }}/images/2017-11-12-raid-types-examples/os-install-06.png){: .center-image}
+![OS Install #6]({{ site.url }}/images/raid-types-examples/os-install-06.png){: .center-image}
 
-![OS Install #7]({{ site.url }}/images/2017-11-12-raid-types-examples/os-install-07.png){: .center-image}
+![OS Install #7]({{ site.url }}/images/raid-types-examples/os-install-07.png){: .center-image}
 
-![OS Install #8]({{ site.url }}/images/2017-11-12-raid-types-examples/os-install-08.png){: .center-image}
+![OS Install #8]({{ site.url }}/images/raid-types-examples/os-install-08.png){: .center-image}
 
 그리고 확인 버튼을 누르면 아래와 같이 디스크 파티셔닝을 하겠다는 확인 창이 뜬다.
 
-![OS Install #9]({{ site.url }}/images/2017-11-12-raid-types-examples/os-install-09.png){: .center-image}
+![OS Install #9]({{ site.url }}/images/raid-types-examples/os-install-09.png){: .center-image}
 
 여기서 중요한 것들을 확인할 수 있다. 우선 Linux 에서 SATA 나 SAS 로 디스크를 꼽으면 /dev 안에 sda, sdb, sdc .. 와 같은 이름으로 표시된다. 이 이름들은 물리디스크 자체를 말하는 것이다.
 
@@ -168,7 +168,7 @@ lrwxrwxrwx.  1 root root    8 Nov 12 23:09 swap -> ../md125
 
 이제 우리가 위에서 설치한 OS 위에 명령어를 통해 직접 RAID 5 를 구성해보자. 이전 글에서 설명했다시피 아래와 같은 구성이다.
 
-![RAID 5]({{ site.url }}/images/2017-11-12-raid-types-examples/raid-5.png){: .center-image}
+![RAID 5]({{ site.url }}/images/raid-types-examples/raid-5.png){: .center-image}
 
 설치 전에 먼저 생각해보자.
 
@@ -180,7 +180,7 @@ lrwxrwxrwx.  1 root root    8 Nov 12 23:09 swap -> ../md125
 
 Virtual Box 의 Guest OS 를 종료하고, 아래와 같이 2GiB 크기로 3개의 디스크를 추가해보자.
 
-![RAID 5 Install #1]({{ site.url }}/images/2017-11-12-raid-types-examples/raid-5-install-01.png){: .center-image}
+![RAID 5 Install #1]({{ site.url }}/images/raid-types-examples/raid-5-install-01.png){: .center-image}
 
 그리고 OS 를 시작하자.
 
@@ -447,7 +447,7 @@ drwx------.  2 root root  16K Nov 13 00:34 lost+found
 
 Guest OS 를 종료시키고 우리가 추가했던 디스크 3개 중 1개를 아래와 같이 제거하자.
 
-![RAID 5 Problem #1]({{ site.url }}/images/2017-11-12-raid-types-examples/raid-5-problem-01.png){: .center-image}
+![RAID 5 Problem #1]({{ site.url }}/images/raid-types-examples/raid-5-problem-01.png){: .center-image}
 
 그리고 Guest OS 를 시작시켜보자. 근데 뭔가 문제가 생길 줄 알았는데, 정상적으로 부팅이 된다. /dev/md5 RAID 의 상태를 한 번 확인해보자.
 
@@ -513,7 +513,7 @@ initramfs-0-rescue-3291d16e80fc46dba5c0e221b64c5594.img  vmlinuz-3.10.0-693.el7.
 
 우선 이 상태에서 고장난 디스크를 얼른 교체해서 복구를 수행하기 위해 Guest OS 를 종료하고, 아래와 같이 새로운 디스크를 꼽아보자.
 
-![RAID 5 Problem #2]({{ site.url }}/images/2017-11-12-raid-types-examples/raid-5-problem-02.png){: .center-image}
+![RAID 5 Problem #2]({{ site.url }}/images/raid-types-examples/raid-5-problem-02.png){: .center-image}
 
 이제 Guest OS 를 시작시키자. 당연하지만 새로 추가한 디스크가 자동으로 RAID 그룹에 추가되지 않는다. 새로 추가한 디스크를 확인해보고 파티셔닝하자.
 
@@ -628,15 +628,15 @@ RAID 상태를 확인해보자.
 
 (Emergency Mode 에서는 sshd 가 기동이 안되어서 SSH 를 붙을 수가 없다. 그래서 쉘의 내용을 복사할 수가 없어서 캡쳐로 대신한다.)
 
-![RAID 5 Problem #3]({{ site.url }}/images/2017-11-12-raid-types-examples/raid-5-problem-03.png){: .center-image}
+![RAID 5 Problem #3]({{ site.url }}/images/raid-types-examples/raid-5-problem-03.png){: .center-image}
 
 State 가 inactive 이다. 즉 사용 불능 상태이다. OS 를 정상적으로 구동시키려면 이 문제를 해결시켜줘야 한다. 이미 디스크 2개가 없어졌으므로 데이터의 2/3 는 날아간 상태이다. 데이터의 복구는 불가능하다고 생각하는 것이 맞다.
 
 이럴 때는 어쩔 수 없이 아래와 같이 이 RAID 를 제거해주고 OS 를 구동시켜야 한다.
 
-![RAID 5 Problem #4]({{ site.url }}/images/2017-11-12-raid-types-examples/raid-5-problem-04.png){: .center-image}
+![RAID 5 Problem #4]({{ site.url }}/images/raid-types-examples/raid-5-problem-04.png){: .center-image}
 
-![RAID 5 Problem #5]({{ site.url }}/images/2017-11-12-raid-types-examples/raid-5-problem-05.png){: .center-image}
+![RAID 5 Problem #5]({{ site.url }}/images/raid-types-examples/raid-5-problem-05.png){: .center-image}
 
 다시 시작하면 정상적으로 시작되는 것을 확인할 수 있다. 이후에는 디스크를 추가해서 다시 RAID 를 구성하던지 하는 추가 작업이 필요할 것이다.
 

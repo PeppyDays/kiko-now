@@ -51,13 +51,13 @@ tags: [blog, jekyll, github page]
 
 이제 내가 마음에 드는 Github Repository 를 찾았으면, 그걸 내 Github 계정으로 가져오도록 Fork 하자. 아래 그림처럼 Fork 버튼을 누르고, 내 계정 이미지를 눌러서 내 Github Repository 로 가져온다.
 
-![Github Repository Fork]({{ site.url }}/images/2017-11-06-install-jekyll-github-page/github-repository-fork.png){: .center-image}
+![Github Repository Fork]({{ site.url }}/images/install-jekyll-github-page/github-repository-fork.png){: .center-image}
 
 그러면 수십초 안에 내 Repository 에 Fork 한 Repository 가 나타난다.
 
 Github Page 는 {사용자명}.github.io 일 때만 우리가 원하는 대로 동작하기 때문에, Fork 한 Repository 의 Settings 로 들어가서 Repository Name 을 아래처럼 변경해야 한다.
 
-![Github Repository Change Name]({{ site.url }}/images/2017-11-06-install-jekyll-github-page/github-repository-change-name.png){: .center-image}
+![Github Repository Change Name]({{ site.url }}/images/install-jekyll-github-page/github-repository-change-name.png){: .center-image}
 
 그리고 제대로 가져와졌는지 확인을 위해 https://{사용자명}.github.io 를 접속해보자. 웹사이트가 뜨면 여기까지 성공이다.
 
@@ -69,7 +69,7 @@ Github Repository 에 바로 글을 쓸 수는 없기 때문에(?), 로컬 컴�
 
 우선은 Fork 해서 변경한 Repository 를 로컬에 Clone 하기 위해 아래 부분에서 Clone URL 을 확인하자.
 
-![Github Repository Clone URL]({{ site.url }}/images/2017-11-06-install-jekyll-github-page/github-repository-clone-url.png){: .center-image}
+![Github Repository Clone URL]({{ site.url }}/images/install-jekyll-github-page/github-repository-clone-url.png){: .center-image}
 
 그리고 터미널에서 Clone 된 데이터가 저장되기를 원하는 경로로 이동해서 아래 명령어를 수행하자.
 
@@ -115,7 +115,7 @@ Configuration file: /Users/kakao/Documents/peppydays.github.io/_config.yml
 
 그리고 http://127.0.0.1:4000 에 접속해서 아래와 같이 웹사이트가 뜨면 성공이다.
 
-![Github Blog Dev. Web]({{ site.url }}/images/2017-11-06-install-jekyll-github-page/github-blog-dev-web.png){: .center-image}
+![Github Blog Dev. Web]({{ site.url }}/images/install-jekyll-github-page/github-blog-dev-web.png){: .center-image}
 
 ### Github Page 설정 및 글쓰기
 
@@ -141,7 +141,7 @@ It's the first page I made.
 
 그러면 새로운 변경사항을 개발 웹서버가 인식해서 적용한다. http://127.0.0.1:4000 에 새로 접속하거나 리프레시 해보면 아래와 같이 글이 새로 생긴 것을 확인할 수 있다.
 
-![Hello World Post]({{ site.url }}/images/2017-11-06-install-jekyll-github-page/hello-world-post.png){: .center-image}
+![Hello World Post]({{ site.url }}/images/install-jekyll-github-page/hello-world-post.png){: .center-image}
 
 여기까지 했으면 이제 Markdown 문법을 익히고 글을 적으면 된다! 다만 왜 포스트의 파일명 형식이 저렇고 다른 폴더들은 어떤 역할을 하는지는 아래 내용을 보자.
 
